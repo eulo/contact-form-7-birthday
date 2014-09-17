@@ -1,7 +1,7 @@
 contact form 7 birthday
 =======================
 
-Module for Contact Form 7 for Wordpress to support format MM/DD
+Module for Contact Form 7 for Wordpress to support format DD/MM
 
 ###Install
 
