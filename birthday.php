@@ -1,6 +1,6 @@
 <?php
 /*!
- * Base module for Birthday of the form MM/DD
+ * Base module for Birthday of the form DD/MM
  */
 
 add_action( 'wpcf7_init', 'wpcf7_add_shortcode_birthday' );
@@ -79,7 +79,7 @@ function wpcf7_birthday_validation_filter( $result, $tag ) {
                 : '';
 
   if ( 'birthday' == $tag->type && $value != '' ) {
-    if (preg_match('@^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0=9]|3[01])$@', $value) != 1) {
+    if (preg_match('@^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[0-2])$@', $value) != 1) {
       $result['valid'] = false;
       $result['reason'][$name] = wpcf7_get_message( 'invalid_birthday' );
     }
@@ -89,7 +89,7 @@ function wpcf7_birthday_validation_filter( $result, $tag ) {
     if ($value == '') {
       $result['valid'] = false;
       $result['reason'][$name] = wpcf7_get_message( 'invalid_required' );
-    } else if (preg_match('@^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0=9]|3[01])$@', $value) != 1) {
+    } else if (preg_match('@^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[0-2])$@', $value) != 1) {
       $result['valid'] = false;
       $result['reason'][$name] = wpcf7_get_message( 'invalid_birthday' );
     }
